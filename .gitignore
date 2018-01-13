@@ -58,6 +58,6 @@ typings/
 .env
 
 # lowdb files
-db/*.json
+store/*.json
 
 
