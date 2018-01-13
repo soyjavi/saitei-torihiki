@@ -1,6 +1,6 @@
 {
   "name": "saitei-torihiki",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "裁定取引",
   "main": "index.js",
   "scripts": {
