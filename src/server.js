@@ -25,5 +25,6 @@ app.get('/ticks', (req, res) => {
 
 app.listen(3000, () => {
   cron();
+
   console.log(`${PKG.name} ${PKG.version} on port 3000!`);
 });

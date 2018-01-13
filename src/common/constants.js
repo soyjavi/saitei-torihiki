@@ -11,4 +11,6 @@ export default {
     GDAX: 'gdax',
     KUCOIN: 'kucoin',
   },
+
+  MIN_PROFIT: 2.8,
 };

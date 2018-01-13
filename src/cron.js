@@ -1,7 +1,9 @@
 import { CronJob } from 'cron';
 import { bitstamp, binance, gdax, kucoin } from './exchanges';
+import arbitrage from './arbitrage';
 
 const DEFAULTS = {
+  runOnInit: false,
   start: true,
   timeZone: 'America/Los_Angeles',
 };
@@ -24,10 +26,9 @@ export default () => {
 
   // -- @TODO: Arbitrage
   new CronJob({
+    ...DEFAULTS,
     cronTime: '45 */1 * * * *', // - Every minute at second 45"
-    onTick: () => {
-      console.log('arbitrage.start', new Date());
-    },
+    onTick: arbitrage,
   });
 
   // -- @TODO: Dispatch alarms
