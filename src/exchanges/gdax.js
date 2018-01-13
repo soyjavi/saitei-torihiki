@@ -6,7 +6,7 @@ import { getSymbols } from './modules';
 const { EXCHANGES: { GDAX } } = C;
 const URL = 'https://api.gdax.com/products';
 
-export default async (orderbook, timestamp) => {
+export default async (timestamp) => {
   const symbols = getSymbols((coin, pair) => `${coin}-${pair}`.toUpperCase());
 
   Object.keys(symbols).forEach(async (symbol) => {
@@ -25,7 +25,7 @@ export default async (orderbook, timestamp) => {
         },
         upsert: true,
       });
-      console.log('>GDAX>', tick);
+      console.log(`[GDAX] ${symbol} ${tick.buy} ${tick.sell}`);
     }
   });
 };

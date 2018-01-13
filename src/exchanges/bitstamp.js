@@ -6,7 +6,7 @@ import { getSymbols } from './modules';
 const { EXCHANGES: { BITSTAMP } } = C;
 const URL = 'https://www.bitstamp.net/api/v2/ticker';
 
-export default async (orderbook, timestamp) => {
+export default async (timestamp) => {
   const symbols = getSymbols((coin, pair) => `${coin}${pair}`.toLowerCase());
 
   Object.keys(symbols).forEach(async (symbol) => {
@@ -25,7 +25,7 @@ export default async (orderbook, timestamp) => {
         },
         upsert: true,
       });
-      console.log('>BITSTAMP>', tick);
+      console.log(`[BITSTAMP] ${symbol} ${tick.buy} ${tick.sell}`);
     }
   });
 };

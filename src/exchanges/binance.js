@@ -24,7 +24,7 @@ export default async (timestamp) => {
         },
         upsert: true,
       });
-      console.log('>BINANCE>', tick);
+      console.log(`[BINANCE] ${symbol} ${tick.buy} ${tick.sell}`);
     }
   });
 };

@@ -28,7 +28,7 @@ export default async (orderbook, timestamp) => {
         },
         upsert: true,
       });
-      console.log('>KUCOIN>', tick);
+      console.log(`[KUCOIN] ${symbol} ${tick.buy} ${tick.sell}`);
     }
   });
 };

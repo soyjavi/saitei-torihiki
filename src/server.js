@@ -3,6 +3,7 @@ import express from 'express';
 import errorhandler from 'errorhandler';
 import PKG from '../package.json';
 import cron from './cron';
+import { Tick } from './store';
 
 const app = express();
 
@@ -18,7 +19,11 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/ticks', (req, res) => {
+  res.json(Tick.find({ limit: 0 }));
+});
+
 app.listen(3000, () => {
   cron();
-  console.log(`${PKG.name} on port 3000!`);
+  console.log(`${PKG.name} ${PKG.version} on port 3000!`);
 });
