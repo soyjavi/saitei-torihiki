@@ -6,10 +6,10 @@ import kucoin from './kucoin';
 
 export default () => {
   const timestamp = new Date().getTime();
-  // bitstamp(timestamp);
-  // binance(timestamp);
-  // gdax(timestamp);
+  bitstamp(timestamp);
+  binance(timestamp);
+  gdax(timestamp);
   kraken(timestamp);
-  // kucoin(timestamp);
+  kucoin(timestamp);
 };
 

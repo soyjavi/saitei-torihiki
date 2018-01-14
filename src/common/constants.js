@@ -1,8 +1,10 @@
 export default {
   COINS: {
-    BTC: ['EUR'],
+    BTC: ['EUR', 'USD'],
     ETH: ['BTC', 'EUR'],
-    LTC: ['BTC'],
+    LTC: ['BTC', 'EUR'],
+    XMR: ['BTC', 'EUR'],
+    XRP: ['BTC', 'EUR'],
   },
 
   EXCHANGES: {
