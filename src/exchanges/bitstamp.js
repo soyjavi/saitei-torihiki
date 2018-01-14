@@ -21,7 +21,7 @@ export default async (timestamp) => {
           buy: parseFloat(buy, 10),
           sell: parseFloat(sell, 10),
           timestamp,
-          volume,
+          volume: parseInt(volume, 10),
         },
         upsert: true,
       });

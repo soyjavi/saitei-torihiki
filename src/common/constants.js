@@ -9,6 +9,7 @@ export default {
     BINANCE: 'binance',
     BITSTAMP: 'bitstamp',
     GDAX: 'gdax',
+    KRAKEN: 'kraken',
     KUCOIN: 'kucoin',
   },
 

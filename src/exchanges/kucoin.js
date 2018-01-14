@@ -6,7 +6,7 @@ import { getSymbols } from './modules';
 const { EXCHANGES: { KUCOIN } } = C;
 const URL = 'https://api.kucoin.com/v1/open/tick?symbol=';
 
-export default async (orderbook, timestamp) => {
+export default async (timestamp) => {
   const symbols = getSymbols((coin, pair) => `${coin}-${pair}`.toUpperCase());
 
   Object.keys(symbols).forEach(async (symbol) => {
@@ -24,7 +24,7 @@ export default async (orderbook, timestamp) => {
           buy: parseFloat(buy, 10),
           sell: parseFloat(sell, 10),
           timestamp,
-          volume,
+          volume: parseInt(volume, 10),
         },
         upsert: true,
       });
