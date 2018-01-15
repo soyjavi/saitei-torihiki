@@ -19,8 +19,11 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/ticks', (req, res) => {
-  res.json(Tick.find({ limit: 0 }));
+app.get('/ticks', (req, res) => res.json(Tick.find({ limit: 0 })));
+
+app.get('/ticks/:symbol', (req, res) => {
+  const { params: { symbol } } = req;
+  res.json(Tick.find({ query: { symbol }, limit: 0 }));
 });
 
 app.listen(3000, () => {
